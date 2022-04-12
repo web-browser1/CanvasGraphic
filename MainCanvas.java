@@ -8,34 +8,6 @@ Copyright 2022
 */
 
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LightingColorFilter;
-import android.graphics.Paint;
-import android.graphics.PixelFormat;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Display;
-import android.view.MotionEvent;
-import android.view.SurfaceView;
-import android.view.View;
-
-import androidx.annotation.Nullable;
-import androidx.core.view.MotionEventCompat;
-
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.logging.Handler;
-
 public class MainCanvas extends SurfaceView {
 
 
@@ -477,71 +449,6 @@ public class MainCanvas extends SurfaceView {
                 {1, 2, 2},
                 {2, 0, 2},
                 {1, 2, 1}, // 475
-                {2, 0, 1},
-
-
-                {1, 6, 2},
-                {1, 5, 4},
-
-                {4, 6, 5},
-
-                {1, 5, 2},
-                {1, 5, 4},
-
-                {1, 5, 2},
-                {1, 5, 4},
-
-
-                {1, 5, 3}, // 510
-                {2, 0, 5},
-                {1, 3, 3},
-                {2, 0, 5},
-                {1, 3, 3},
-                {2, 0, 5},
-                {1, 3, 3},
-                {2, 0, 5},
-
-                {1, 6, 4},
-                {2, 0, 4},
-                {1, 3, 4},
-                {2, 0, 4},
-                {1, 3, 4},
-                {2, 0, 4},
-                {1, 3, 4},
-                {2, 0, 4},
-
-                {4, 6, 6},
-
-                {1, 6, 5}, // 540
-                {2, 0, 3},
-                {1, 3, 5},
-                {2, 0, 3},
-                {1, 3, 5},
-                {2, 0, 3},
-                {1, 3, 5},
-                {2, 0, 3},
-
-
-                {1, 6, 2},
-                {1, 4, 2}, // 559
-                {1, 6, 3},
-                {1, 4, 2},
-                {1, 6, 4},
-                {1, 4, 2},
-
-
-                {1, 4, 1},
-                {1, 1, 2},
-                {1, 1, 3},
-                {1, 1, 4},
-                {1, 1, 5},
-                {1, 1, 5},
-                {1, 1, 5},
-                {1, 1, 4},
-
-                {1, 4, 3},
-                {1, 1, 4},
-                {1, 1, 5},
                 {2, 0, 1},
 
                 {2, 6, 1},
@@ -1084,233 +991,6 @@ public class MainCanvas extends SurfaceView {
 
     }
 
-
-    public void reloadResources(int hq) {
-
-
-        int dr2[][] = new int[][]{
-
-                {
-                        R.drawable.g336602, R.drawable.g337512, R.drawable.g337422, R.drawable.g337332,
-                        R.drawable.g337612, R.drawable.g337712, R.drawable.g337812, R.drawable.g337902,
-                        R.drawable.g330802, R.drawable.g330912, R.drawable.g331022, R.drawable.g331122,
-                        R.drawable.g331672, R.drawable.g331792, R.drawable.g331912, R.drawable.g332022,
-
-                },
-
-                {
-                        R.drawable.g336603, R.drawable.g337513, R.drawable.g337423, R.drawable.g337333,
-                        R.drawable.g337613, R.drawable.g337713, R.drawable.g337813, R.drawable.g337903,
-                        R.drawable.g330803, R.drawable.g330913, R.drawable.g331023, R.drawable.g331123,
-                        R.drawable.g331673, R.drawable.g331793, R.drawable.g331913, R.drawable.g332023,
-
-                },
-
-                {    // g r
-
-                        /*   R.drawable.g15136, R.drawable.g15146, R.drawable.g15156, R.drawable.g15164,
-                           R.drawable.g15175, R.drawable.g15186, R.drawable.g15198, R.drawable.g15207,
-                           R.drawable.g15219, R.drawable.g15232, R.drawable.g15245, R.drawable.g15255,
-                           R.drawable.g15269, R.drawable.g15284, R.drawable.g15299, R.drawable.g15311, */
-
-                        R.drawable.g336601, R.drawable.g337511, R.drawable.g337421, R.drawable.g337331,
-                        R.drawable.g337611, R.drawable.g337711, R.drawable.g337811, R.drawable.g337901,
-                        R.drawable.g330801, R.drawable.g330911, R.drawable.g331021, R.drawable.g331121,
-                        R.drawable.g331671, R.drawable.g331791, R.drawable.g331911, R.drawable.g332021,
-
-                },
-
-                {
-                        R.drawable.g33660, R.drawable.g33751, R.drawable.g33742, R.drawable.g33733,
-                        R.drawable.g33761, R.drawable.g33771, R.drawable.g33781, R.drawable.g33790,
-                        R.drawable.g33080, R.drawable.g33091, R.drawable.g33102, R.drawable.g33112,
-                        R.drawable.g33167, R.drawable.g33179, R.drawable.g33191, R.drawable.g33202,
-
-                },
-
-
-        };
-
-
-        int dr1[][] = new int[][]{
-
-                {
-                        R.drawable.path102912, R.drawable.path101572, R.drawable.path101572,
-                        R.drawable.path101512, R.drawable.path101532,
-                        R.drawable.path104332, R.drawable.path101472,
-
-                        R.drawable.g67062, R.drawable.g67402, R.drawable.g67502, R.drawable.g236092
-                },
-
-                {
-                        R.drawable.path102913, R.drawable.path101573, R.drawable.path101573,
-                        R.drawable.path101513, R.drawable.path101533,
-                        R.drawable.path104333, R.drawable.path101473,
-
-                        R.drawable.g67063, R.drawable.g67403, R.drawable.g67503, R.drawable.g236093
-                },
-
-                /* {            //  g r
-                         R.drawable.path15315, R.drawable.path15313,
-                         R.drawable.path15313, R.drawable.path15317, R.drawable.path15438,
-                         R.drawable.path104334, R.drawable.path10433,
- 
-                         R.drawable.g15412, R.drawable.g15422, R.drawable.g15432, R.drawable.g15621
-                 },*/
-
-                {
-                        R.drawable.path102911, R.drawable.path101571, R.drawable.path101571,
-                        R.drawable.path101511, R.drawable.path101531,
-                        R.drawable.path104331, R.drawable.path101471,
-
-                        R.drawable.g6706, R.drawable.g6740, R.drawable.g6750, R.drawable.g23609
-                },
-
-
-                {
-                        R.drawable.path10291, R.drawable.path10157, R.drawable.path10157,
-                        R.drawable.path10151, R.drawable.path10153,
-                        R.drawable.path10433, R.drawable.path10147,
-
-                        R.drawable.g6706, R.drawable.g6740, R.drawable.g6750, R.drawable.g23609
-                },
-
-
-        };
-
-
-        /// tile_b = (height)/((int)(3.80f * dp)+1);
-
-
-        d1 = BitmapFactory.decodeResource(getResources(), dr1[hq][7]);
-        d2 = BitmapFactory.decodeResource(getResources(), dr1[hq][8]);
-        d3 = BitmapFactory.decodeResource(getResources(), dr1[hq][9]);
-        d4 = BitmapFactory.decodeResource(getResources(), dr1[hq][10]);
-
-
-        int d_r1[][] = new int[][]{
-
-                // gr
-                {120, 210, 74, 130, 120, 199, 438, 1205,
-                        359, 222, 359, 222, 359, 222, 941, 359, 941, 359, 359, 85, 359, 85, 3, 157, 3, 85, 101, 337, 209, 342},
-
-                {114, 181,  // trees
-                        89, 141,
-                        107, 171,
-                        639, 1939,
-
-
-                        127, 110,
-                        127, 110,
-                        127, 110,
-                        346, 165, 310, 148, 145, 40, 145, 40, 3, 157, 3, 85, 101, 337, 209, 342
-
-                }
-        };
-
-        int k = 1;
-
-        d1w = d_r1[k][0];
-        d1h = d_r1[k][1];
-        d2w = d_r1[k][2];
-        d2h = d_r1[k][3];
-        d3w = d_r1[k][4];
-        d3h = d_r1[k][5];
-
-        d4w = d_r1[k][6];
-        d4h = d_r1[k][7];
-
-
-        /*
-        d01 = BitmapFactory.decodeResource(getResources(), R.drawable.g26281);
-        d02 = BitmapFactory.decodeResource(getResources(), R.drawable.g26378);
-        */
-
-        d11 = BitmapFactory.decodeResource(getResources(), dr1[hq][0]);
-
-        d12 = BitmapFactory.decodeResource(getResources(), dr1[hq][1]);
-        d13 = BitmapFactory.decodeResource(getResources(), dr1[hq][2]);
-
-        d14 = BitmapFactory.decodeResource(getResources(), dr1[hq][3]);
-        d15 = BitmapFactory.decodeResource(getResources(), dr1[hq][4]);
-        d16 = BitmapFactory.decodeResource(getResources(), dr1[hq][5]);
-        d17 = BitmapFactory.decodeResource(getResources(), dr1[hq][6]);
-
-        d18 = BitmapFactory.decodeResource(getResources(), R.drawable.rect9494);
-        d19 = BitmapFactory.decodeResource(getResources(), R.drawable.rect94942);
-        d20 = BitmapFactory.decodeResource(getResources(), R.drawable.g9523);
-        d21 = BitmapFactory.decodeResource(getResources(), R.drawable.g9629);
-
-
-        d11w = d_r1[k][8];
-        d11h = d_r1[k][9];
-        d12w = d_r1[k][10];
-        d12h = d_r1[k][11];
-        d13w = d_r1[k][12];
-        d13h = d_r1[k][13];
-
-        d14w = d_r1[k][14];
-        d14h = d_r1[k][15];
-        d15w = d_r1[k][16];
-        d15h = d_r1[k][17];
-
-        d16w = d_r1[k][18];
-        d16h = d_r1[k][19];
-        d17w = d_r1[k][20];
-        d17h = d_r1[k][21];
-
-
-        d18w = d_r1[k][22];
-        d18h = d_r1[k][23];
-        d19w = d_r1[k][24];
-        d19h = d_r1[k][25];
-        d20w = d_r1[k][26];
-        d20h = d_r1[k][27];
-        d21w = d_r1[k][28];
-        d21h = d_r1[k][29];
-
-
-        d40 = getResources().getDrawable(R.drawable.rect9003, null);
-        d41 = getResources().getDrawable(R.drawable.g8757, null);
-        d42 = getResources().getDrawable(R.drawable.g8767, null);
-        d43 = getResources().getDrawable(R.drawable.g8777, null);
-
-
-        d40r = new int[][]{
-
-                {59, 123},
-                {80, 101},
-                {80, 91},
-                {91, 80},
-        };
-
-
-        dweb1 = BitmapFactory.decodeResource(getResources(), R.drawable.g13522);
-
-
-        Bitmap d11 = BitmapFactory.decodeResource(getResources(), dr2[hq][0]);  // 75 , 98
-        Bitmap d12 = BitmapFactory.decodeResource(getResources(), dr2[hq][1]);   //  71,  96
-        Bitmap d13 = BitmapFactory.decodeResource(getResources(), dr2[hq][2]);
-        Bitmap d14 = BitmapFactory.decodeResource(getResources(), dr2[hq][3]);
-
-
-        d11r = new int[][]{
-                {74, 99},
-                {72, 98},
-                {72, 92},
-                {74, 86},
-        };
-
-        Bitmap d21 = BitmapFactory.decodeResource(getResources(), dr2[hq][4]);
-        Bitmap d22 = BitmapFactory.decodeResource(getResources(), dr2[hq][5]);
-        Bitmap d23 = BitmapFactory.decodeResource(getResources(), dr2[hq][6]);
-        Bitmap d24 = BitmapFactory.decodeResource(getResources(), dr2[hq][7]);
-
-        Bitmap d31 = BitmapFactory.decodeResource(getResources(), dr2[hq][8]);
-        Bitmap d32 = BitmapFactory.decodeResource(getResources(), dr2[hq][9]);
-        Bitmap d33 = BitmapFactory.decodeResource(getResources(), dr2[hq][10]);
-        Bitmap d34 = BitmapFactory.decodeResource(getResources(), dr2[hq][11]);
-
         Bitmap d41 = BitmapFactory.decodeResource(getResources(), dr2[hq][12]);
         Bitmap d42 = BitmapFactory.decodeResource(getResources(), dr2[hq][13]);
         Bitmap d43 = BitmapFactory.decodeResource(getResources(), dr2[hq][14]);
@@ -1343,25 +1023,6 @@ public class MainCanvas extends SurfaceView {
     public void checkpointStart(int level) {
 
 
-        if (level < 5) {
-            e = 0;
-        } else if (level >= 5) {
-            e = 1;
-        } else if (level >= 10) {
-            e = 2;
-        } else if (level >= 15) {
-            e = 3;
-        }
-
-
-        //   moveYStart = 1;
-
-        //   isMove = 1;
-
-        //   moveToY = (int)(152.38f * dp);
-
-        spiderY = -150 * dp;
-
 
         moveToY = (int) (cHeight / 2) + (120f * dp); // 400
 
@@ -1370,30 +1031,7 @@ public class MainCanvas extends SurfaceView {
             moveToY = (int) (220f * dp); // 400
             //    Log.d("TAG", "checkpoint moveToY <<<<<" );
         }
-        //   Log.d("TAG", "checkpoint moveToY: " + moveToY + "  cHeight/2: " + (cHeight/2));
 
-
-        if (spiderY_r == 1) {
-
-            spiderY = (int) (130f * dp); // 400
-
-            moveToY = (int) (40f * dp); // 400
-
-        }
-
-
-        // startX = checkbr[checkpointc][1] * tile;
-
-        //  startX = (checkbr[checkpointc-1 < 0 ? 0 : checkpointc-1][1] * tile) + 2*tile;
-
-        startX = checkpointStartXc;
-
-
-        spiderX = startX;
-
-        spiderCurrentX = spiderX;
-
-        spiderCurrentY = spiderY;
 
 
         if (checkpointc > 0) {
@@ -1421,26 +1059,6 @@ public class MainCanvas extends SurfaceView {
 
             offsetX = ((spiderCurrentX) - cx11);
         }
-
-
-        // cx11 = (spiderCurrentX + ( cameraH == 1 ? 0 : pX ) );
-
-
-        // rx11 = (spiderCurrentX + pX ) - offsetX;
-
-
-        // spiderCurrentX = (spiderCurrentX +  (pX )  );
-
-
-
-
-
-    /*    Log.d("TAG", "spiderCurrentX : " + spiderCurrentX + "  spiderCurrentY: " + spiderCurrentY);
-        Log.d("TAG", "spiderX : " + spiderX + "  spiderY: " + spiderY);
-
-        Log.d("TAG",  "checkpoint moveToY: " + moveToY + " spiderY: " + spiderY );
-*/
-
         update_game = 1;
         invalidate();
 
@@ -1449,12 +1067,6 @@ public class MainCanvas extends SurfaceView {
 
     int update_game = 0;
 
-
-    int spider_r = 0;
-    int spider_t = 1;
-    int spider_e = 7;
-
-
     int p_run = 0;
 
     int evolve_d = 0;
@@ -1462,7 +1074,7 @@ public class MainCanvas extends SurfaceView {
 
     int run_evolve = 0;
 
-    public void evolveSpider(int e) {
+    public void evolve64(int e) {
 
 
         if (e == 1) {
@@ -1631,13 +1243,7 @@ public class MainCanvas extends SurfaceView {
     }
 
 
-    public void evolveSpiderContinue() {
-
-        // GAME_STATE = 1;
-
-        invalidate();
-    }
-
+  
 
     public void StartA() {
 
@@ -1681,10 +1287,7 @@ public class MainCanvas extends SurfaceView {
             moveToX = 0;
             movetoXb = 0;
 
-            spiderCurrentX = 0;
-
-
-            // startX = checkbr[checkpointc][1] * tile;
+          
 
             startX = checkpointStartXc;
 
@@ -1698,22 +1301,6 @@ public class MainCanvas extends SurfaceView {
             moveToY = (int) (92.38f * dp); // 400
 
 
-            spider_c = 1;
-
-            spiderCurrentX = spiderX;
-
-            spiderCurrentY = spiderY;
-
-            //  Log.d("TAG",  "reset moveToY: " + moveToY + " spiderY: " + spiderY );
-
-
-            game_over = 0;
-
-            GAME_STATE = 1;
-
-
-            //  MainActivity.getInstance().canvasState(5);
-
             br_1 = 1;
 
 
@@ -1724,31 +1311,6 @@ public class MainCanvas extends SurfaceView {
 
 
     }
-
-
-    public void spiderAnimation() {
-
-        run_evolve = 10;
-
-        spider_r = 0;
-
-        spider_t = 1;
-        spider_e = 10;
-
-
-    }
-
-
-    float dsc1 = 0.50f;  // 0.40   /// 0.50f  // 63    // 0.57f   // 47  spider
-
-    float dsc = 0.36f;   // 0.40   // 0.36f  ///  0.43f   // 33        tree mountain
-
-
-    float sc1 = 0.4f;  // 0.40   // 0.9f  /// 1f             bricks
-
-
-    float spiderX = 300;
-    float spiderY = -150;
 
     int moveX = 0;
 
@@ -1772,296 +1334,7 @@ public class MainCanvas extends SurfaceView {
     int move_s = 0;
 
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
-
-        final int action = MotionEventCompat.getActionMasked(event);
-
-        switch (action) {
-
-            case MotionEvent.ACTION_DOWN: {
-                final int pointerIndex = MotionEventCompat.getActionIndex(event);
-                final float x = MotionEventCompat.getX(event, pointerIndex);
-                final float y = MotionEventCompat.getY(event, pointerIndex);
-
-                Log.d("TAG", " onTouchEvent  GAME_STATE: " + GAME_STATE);
-
-                if (GAME_STATE != -1 && GAME_STATE != 1230 && GAME_STATE != 5 && GAME_STATE != 10) {
-                    isMove = 0;
-
-
-                    downY = y;
-                    spiderY = spiderCurrentY;
-                }
-
-
-                Log.d("TAG", "onTouch action down y : " + y);
-
-                break;
-            }
-
-            case MotionEvent.ACTION_MOVE: {
-                final int pointerIndex = MotionEventCompat.getActionIndex(event);
-                final float x = MotionEventCompat.getX(event, pointerIndex);
-                final float y = MotionEventCompat.getY(event, pointerIndex);
-
-
-                if (GAME_STATE != -1 && GAME_STATE != 1230 && GAME_STATE != 5 && GAME_STATE != 10) {
-
-
-                    pTouchAreaLocalY = y;
-
-                    //    float moveY = downY - pTouchAreaLocalY;
-
-
-                    float moveY = pTouchAreaLocalY - downY;
-
-                    Log.d("TAG", "onTouch action move y : " + y + "  downY: " + downY + "   moveY:" + moveY);
-
-                    // Log.d("TAG", "Action Move moveY:" + moveY );
-
-                /*
-                 Sampled
-
-                 Memory  148 mb
-
-                        115 mb
-
-                 */
-
-
-                    if (spider_c == 1 && (moveY > 10 || moveY < -10) && run_evolve != 1) {
-
-                        //  guideTiled2Screen.setAlpha(1f);
-
-                        isMove = 1;
-
-                        moveToY = moveY;
-
-                        move_s = 2;
-
-
-                        isIdle = 1;
-
-                        update_game = 1;
-                        invalidate();
-                    }
-
-                }
-
-                break;
-            }
-
-            case MotionEvent.ACTION_UP: {
-
-                // game state
-
-                // tap to start, restart, moveX
-
-
-                if (GAME_STATE == 0) {
-
-                    if (GAME_C == 0) {
-
-                        GAME_STATE = 1;
-                    }
-
-                    MainActivity.getInstance().canvasState(1);
-
-                 
-                } else if (GAME_STATE == 1 && isMove == 0 && run_evolve != 1 && spider5_r == 1 && c_a1 == 0) {
-
-                 
-                    MainActivity.getInstance().canvasState(2);
-
-
-                    move_s = 1;
-
-                    moveX = 1;
-
-                 
-
-                    if ((cameraH == 1 || cameraH == 3)) {
-                        c_a1 = 1;
-
-                    }
-
-
-                    moveToX = (int) (137.28f * dp * sc1);
-
-
-                    spider5_r = 0;
-
-
-                    movetoXb = moveToX;
-
-                    pXb = 0;
-
-
-                    yb1 = yb;
-
-
-                    preSpiderY = spiderCurrentY;
-
-                    preSpiderX = spiderCurrentX;
-
-                    //  scoreText.setText("Score " + score);
-
-                    //animatedSprite.setCurrentTileIndex(1 + (level*4));
-
-                    spiderX = spiderCurrentX;
-
-                    spiderY = spiderCurrentY;
-
-
-                    //  Log.d("TAG", "spiderX d:" + (spiderX/10));
-
-
-
-                    update_game = 1;
-                    invalidate();
-                   
-                }
-
-
-                if (GAME_STATE == 2 && isMove == 0) {
-
-                    // reset
-
-                    //
-
-                    //   Log.d("TAG", " reset checkpoint: " + checkpointc);
-
-                    if (checkpointc > 0) {
-
-                        cameraH = 2;
-
-                    } else {
-                        cx11 = 0;
-
-                        rx11 = 0;
-                        cameraH = 0;
-                        position = 0;
-                    }
-
-                    moveToX = 0;
-                    movetoXb = 0;
-
-                    spiderCurrentX = 0;
-
-
-                    moveToY = 0;
-
-                    //  movetoXb = moveToX;
-
-                    pXb = 0;
-
-
-                    for (int w1 = 0; w1 < webr1.length; w1++) {
-
-                        webr1[w1][1] = 1;
-                    }
-
-                    // startX = checkbr[checkpointc][1] * tile;
-
-                    startX = checkpointStartXc;
-
-
-                    spiderX = startX;
-
-
-                    moveYStart = 1;
-
-                    cx11 = ((float) getWidth() / 2);
-                    spiderCurrentX = spiderX;
-
-
-                    offsetX = ((spiderCurrentX) - cx11);
-
-
-                    ////////// <<<<<<<  moveToY = (int)(92.38f * dp); // 400
-
-
-                    spiderY = (int) (cHeight / 2);
-                    Log.d("TAG", "spider Y : " + spiderY + " cHeight: " + cHeight);
-                    if (spiderY < 100) {
-
-                        // moveToY = (int)(220f * dp); // 400
-                        Log.d("TAG", "spider Y < 100  : " + spiderY + " cHeight: " + cHeight);
-                    }
-
-
-                    spider_c = 1;
-
-                    spiderCurrentX = spiderX;
-
-                    spiderCurrentY = spiderY;
-
-                    //  Log.d("TAG",  "reset moveToY: " + moveToY + " spiderY: " + spiderY );
-
-
-                    game_over = 0;
-
-                    GAME_STATE = 0;
-
-
-                    MainActivity.getInstance().canvasState(5);
-
-
-                    update_game = 1;
-                    invalidate();
-                }
-
-
-                if (GAME_STATE == 5) {
-
-
-                }
-
-
-                if (GAME_STATE == 7 && isMove == 1) {
-
-                    moveY_s += Math.abs(moveToY);
-
-                    if (moveY_s > 130) {
-
-                        GAME_STATE = 1;
-
-                        MainActivity.getInstance().canvasState(7);
-                    }
-
-                }
-
-
-                break;
-            }
-
-
-        }
-
-
-        //  return super.onTouchEvent(event);
-
-        return true;
-    }
-
-
-    int dbPurchase = 1;
-    int isPurchasedSku = 0;
-
-    int purchaseLevelm = 100;
-
-    int moveYStart = 0;
-
-    float pX = 0;
-    float pY = 0;
-    float spiderCurrentX = 0;
-    float spiderCurrentX2 = 0;
-    float spiderCurrentY = 0;
-    int isIdle = 0;
-
-
+    
     int re = 1;
 
     int moveBack = 0;
@@ -2220,23 +1493,8 @@ public class MainCanvas extends SurfaceView {
 
         if (moveX == 1) {
 
-            //   1,2  / 120  = 0,01
 
-           /* float speedPart = ( 40 / 100 );   // one precent   0,4
-
-
-            float currentX = (spiderCurrentX - spiderX);
-
-
-            if( currentX >= 40 ) { currentX = 40; }
-
-            float current = currentX / 40;  // 0.32f;
-
-
-
-               1.06 = (0.01*x)^2
-
-                   sqrt(1.06) / 0.01  =   102  frames
+           
 
             int sq_e = (int)(Math.sqrt(y_3c) / 0.01f);
 
@@ -2244,45 +1502,7 @@ public class MainCanvas extends SurfaceView {
                 qs1 += (float) Math.pow(sq*0.01f, 2);
             }
 
-
-            */
-
-            // pX = 5 * current;
-
-
-            // 40  / 2.625    = 15.23
-
-
-            //   8   / 2.625    =  3.04
-
-            // 10  /   2.625   = 3.809
-
-            //  5  / 2.625   = 1.904
-
-            //   0.2 / 2.625   =  0.076
-
-
-            /*
-
-
-             1.06 = (0.01*x)^2
-
-                   sqrt(1.06) / 0.01  =   102  frames
-
-            int sq_e = (int)(Math.sqrt(y_3c) / 0.01f);
-
-            for( int sq = 0; sq<sq_e; sq++ ) {
-                qs1 += (float) Math.pow(sq*0.01f, 2);
-            }
-
-            6.06 = 0.4(0.01*x)^2
-
-            sqrt(6.06/0.4) / 0.01
-
-
-
-             */
-
+      
 
             if (spiderCurrentX < (spiderX + px_q1)) {
 
@@ -4863,44 +4083,6 @@ public class MainCanvas extends SurfaceView {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       /* for( int b = 0; b<10; b++ ) {
-
-           if( brickb[b][1] > (spiderCurrentX - 1000) && brickb[b][1] < (spiderCurrentX + 1000) ) {
-
-
-               if( brickb[b][0] == 1 ) {
-
-                   // roof
-
-               }
-           }
-        }*/
-
-
-    }
-
-
-    float t3 = 1.4f;
 
 
 }
