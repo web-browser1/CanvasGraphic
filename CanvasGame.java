@@ -7,10 +7,10 @@ author: David Anderberg
 Copyright 2022
 */
 
-public class Canvas extends SurfaceView {
+public class CanvasGame extends SurfaceView {
 
 
-    private static Canvas instance;
+    private static CanvasGame instance;
     private int dw1 = 0;
     private int dh1 = 0;
     private int d11r[][];
