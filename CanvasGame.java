@@ -3,7 +3,7 @@ package com.example.game;
 // import ...
 
 /**
-author: David Anderberg
+
 Copyright 2022
 */
 
