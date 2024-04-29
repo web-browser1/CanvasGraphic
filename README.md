@@ -48,7 +48,7 @@ Den här koden implementerar förebyggande kollisionsdetektering för ett rörli
 - Om detta villkor uppfylls sker följande åtgärder:
   - br_1 återställs till 0, vilket troligtvis indikerar att spelaren inte längre befinner sig i en kollisionszon.
   - canvasState-funktionen i MainActivity anropas med argumentet 2 (möjligen som indikerar en specifik spelstatsändring).
-  - Rörelsevariabler (moveX, `
+  - Rörelsevariabler (moveX, moveY)
 
 
 
