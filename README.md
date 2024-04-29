@@ -1,11 +1,11 @@
 # 
-###Teknisk dokumentation 
+### Teknisk dokumentation 
 
 
-##Före kollisionsdetektering - Logisk genomgång
+## Före kollisionsdetektering - Logisk genomgång
 Den här koden implementerar förebyggande kollisionsdetektering för ett rörligt objekt (troligtvis en spelarkaraktär) mot tegelstenar i ett spel. Den följer en tydlig röd tråd genom att kontrollera för potentiella kollisioner och vidta lämpliga åtgärder.
 
-##Variabler:
+## Variabler:
 
 br_1: Flagga som indikerar potentiell kollision med tegel (förmodligen 1 när den befinner sig i kollisionszonen).
 rx11, ry11: Spelarkaraktärens centralkoordinater (x och y).
@@ -22,14 +22,14 @@ dp, sc1: Skaleringsfaktorer (troligtvis för justeringar av skärmstorlek).
 spiderX, spiderY, spiderCurrentX, spiderCurrentY: Spelarkaraktärens positionsvariabler (aktuella och potentiella framtida positioner).
 preSpiderX, preSpiderY: Spelarkaraktärens tidigare positioner (används för beräkningar).
 
-##Logikflöde:
+## Logikflöde:
 
-###Kollisionskontroll:
+### Kollisionskontroll:
 
 Koden kontrollerar först om br_1 är satt till 1, vilket indikerar en potentiell kollisionszon.
 Den utför sedan komplexa beräkningar med hjälp av spelarens och tegelstens positioner, storleksinformation (pWidth, pHeight, tile) och tegeldata (brickbr) för att avgöra om spelarens centrum (rx11, ry11) överlappar med en tegelstens kollisionsområde.
 
-###Kollisionshantering (Typ 1):
+### Kollisionshantering (Typ 1):
 
 Om en kollision upptäcks baserat på brickbr[br][0] == 1, betyder det troligtvis att spelaren träffar en övre eller nedre tegel.
 Koden beräknar ett moveY-värde för att justera spelarens position baserat på tegelstens placering och en liten justering.
@@ -41,7 +41,7 @@ isIdle: Sätter eventuellt spelaren till ett viloläge efter justeringen.
 update_game: Flaggar spelet för uppdatering.
 invalidate: Utlöser skärmavsökning.
 
-###Kollisionshantering (Typ 2):
+### Kollisionshantering (Typ 2):
 
 Den här delen hanterar en annan typ av kollision, potentiellt när spelaren helt har passerat teglet på höger sida.
 Den kontrollerar om br_1 är satt och om spelarens centrum (rx11) är längre till höger än en specifik tröskel baserat på tegelstens position (bx).
