@@ -1,5 +1,64 @@
+
+
+#
+ ### Technical documentation
+
+
+ ## Before collision detection - Logic walkthrough
+ This code implements preemptive collision detection for a moving object (most likely a player character) against bricks in a game.  It follows a clear red thread by checking for potential collisions and taking appropriate action.
+
+ ## Variables:
+
+ - br_1: Flag indicating potential collision with brick (probably 1 when in collision zone).
+ - rx11, ry11: Center coordinates (x and y) of the player character.
+ - pWidth, pHeight: Player character width and height.
+ - bx, by: Brick grid position (x and y).
+ - tile: The size of a single square in the game world.
+ - offsetX: Potential adjustment for brick placement.
+ - brickbr: Array containing information about bricks (probably type and size).
+ - brick_c4: Constant value related to brick size/collision area.
+ - moveX, moveY: Variables to store movement adjustments for the player.
+ - isMove, moveToY, isIdle: Flags to control player movement and state.
+ - update_game, invalidate: Flags to trigger game updates and screen scan.
+ - dp, sc1: Scaling factors (probably for screen size adjustments).
+ - spiderX, spiderY, spiderCurrentX, spiderCurrentY: Player character position variables (current and potential future positions).
+ - preSpiderX, preSpiderY: Player character's previous positions (used for calculations).
+
+ ## Logic flow:
+
+ ### 1. Collision check:
+
+ - The code first checks if br_1 is set to 1, indicating a potential collision zone.
+ - It then performs complex calculations using player and brick positions, size information (pWidth, pHeight, tile) and tile data (brickbr) to determine if the player's center (rx11, ry11) overlaps with a tile's collision area.
+
+ ### 2. Collision handling (Type 1):
+
+ - If a collision is detected based on tilebr[br][0] == 1, it likely means the player is hitting an upper or lower brick.
+ - The code calculates a moveY value to adjust the player's position based on the brick placement and a small adjustment.
+ - It checks if moveY is significant (greater than 10 or less than -10) to avoid unnecessary adjustments.
+ - If a significant adjustment is needed, several flags are set:
+   - isMove: Starts the player's movement.
+   - moveToY: Stores the calculated movement distance.
+   - isIdle: Optionally puts the player to an idle state after the adjustment.
+   - update_game: Flags the game for update.
+   - invalidate: Triggers screen scan.
+
+ ### 3. Collision handling (Type 2):
+
+ - This part handles a different type of collision, potentially when the player has completely passed the brick on the right side.
+ - It checks if br_1 is set and if the player's center (rx11) is further to the right than a specific threshold based on the brick's position (bx).
+ - If this condition is met, the following actions take place:
+   - br_1 is reset to 0, likely indicating that the player is no longer in a collision zone.
+   - canvasState function in MainActivity is called with argument 2 (possibly indicating a specific game state change).
+   - Movement variables (moveX, moveY)
+
+
+
+
+
+
 # 
-### Teknisk dokumentation 
+### Teknisk dokumentation - Swedish 
 
 
 ## Före kollisionsdetektering - Logisk genomgång
